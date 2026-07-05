@@ -1,0 +1,29 @@
+.DS_Store
+
+# Local build/cache output
+.swift-cache/
+*.swiftmodule
+*.swiftdoc
+*.swiftsourceinfo
+
+# Temporary scripts and experiments
+extract_frames.swift
+process_hero_video.swift
+export_silent_test.swift
+video-capture.html
+assets/hero-silent-test.mp4
+
+# Source/reference uploads and screenshots
+微信视频2026-07-03_141803_244.mp4
+外贸网站港口货物繁忙图.mp4
+外贸网站港口货物繁忙图 (1).png
+截屏*.png
+redesign-preview.png
+video-frames/
+
+# Superseded design assets
+assets/hero-port.png
+assets/hero-port-clean.png
+assets/china-factory-bridge.svg
+assets/sourcing-hero-bg.svg
+assets/process-port-source.png

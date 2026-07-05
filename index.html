@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joint Group | China Factory Sourcing Partner</title>
+  <meta name="description" content="Joint Group helps overseas buyers find reliable Chinese factories, verify suppliers, manage samples, compare quotes, and coordinate production follow-up." />
+  <style>
+    :root {
+      --amber: #d88b28;
+      --amber-light: #efa239;
+      --teal: #1f8a84;
+      --ink: #191817;
+      --charcoal: #24201e;
+      --muted: #6d6762;
+      --line: #e7ded3;
+      --paper: #ffffff;
+      --soft: #f7f2eb;
+      --mist: #eef7f6;
+      --radius: 6px;
+      --shadow: 0 18px 45px rgba(26, 22, 18, .16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      background: #211b18 url("assets/hero-port-clean.png") center / cover no-repeat;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.28);
+      transform-origin: center;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(29, 23, 20, .6), rgba(29, 23, 20, .42) 50%, rgba(29, 23, 20, .62)),
+        linear-gradient(180deg, rgba(0, 0, 0, .12), rgba(0, 0, 0, .36));
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: radial-gradient(circle at 62% 44%, rgba(216, 139, 40, .2), transparent 32%);
+      pointer-events: none;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 44px));
+      min-height: 92px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, .5);
+    }
+
+    .brand img {
+      width: 188px;
+      height: auto;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: rgba(255, 255, 255, .88);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .nav-links a {
+      transition: color .18s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--amber-light);
+    }
+
+    .nav-cta {
+      min-height: 44px;
+      padding: 0 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--amber);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+    }
+
+    .nav-links .nav-cta:hover {
+      color: #fff;
+      background: var(--amber-light);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 44px));
+      min-height: calc(100vh - 92px);
+      margin: 0 auto;
+      display: grid;
+      align-items: center;
+      padding: 66px 0 112px;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: var(--amber-light);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7.1vw, 74px);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-shadow: 0 3px 18px rgba(0, 0, 0, .48);
+    }
+
+    .hero-copy p {
+      max-width: 670px;
+      margin: 24px auto 0;
+      color: rgba(255, 255, 255, .9);
+      font-size: clamp(17px, 2vw, 20px);
+      font-weight: 800;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, .42);
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 206px;
+      padding: 0 28px;
+      border: 1px solid transparent;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 900;
+      transition: background .18s ease, border-color .18s ease, transform .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--amber);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, .25);
+    }
+
+    .btn-primary:hover {
+      background: var(--amber-light);
+    }
+
+    .btn-ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .56);
+      background: rgba(0, 0, 0, .18);
+      backdrop-filter: blur(5px);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+    }
+
+    section {
+      padding: 86px 0;
+    }
+
+    .section-inner {
+      width: min(1120px, calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin: 0 auto 46px;
+      text-align: center;
+    }
+
+    .kicker {
+      margin-bottom: 10px;
+      color: var(--amber);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-title h2,
+    .split-copy h2,
+    .contact-copy h2 {
+      font-size: clamp(30px, 4.4vw, 46px);
+      line-height: 1.08;
+      font-weight: 900;
+    }
+
+    .section-title p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .services {
+      background: var(--soft);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      min-height: 318px;
+      position: relative;
+      padding: 30px 28px 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .98)),
+        var(--card-bg, none) center bottom / cover no-repeat,
+        #fff;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(36, 28, 20, .06);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    .service-card:hover,
+    .service-card:focus-within {
+      transform: translateY(-6px);
+      border-color: rgba(216, 139, 40, .32);
+      box-shadow: 0 22px 46px rgba(36, 28, 20, .14);
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 16%, var(--card-glow, rgba(216, 139, 40, .18)), transparent 34%);
+      opacity: .9;
+      pointer-events: none;
+    }
+
+    .service-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-icon {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 26px;
+      display: grid;
+      place-items: center;
+      border-radius: 26px;
+      color: #fff;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0)),
+        var(--icon-bg, var(--amber));
+      box-shadow: 0 18px 34px rgba(32, 26, 20, .16);
+      transform: translateY(0) scale(1);
+      transition: transform .24s cubic-bezier(.2, .8, .2, 1.28), box-shadow .24s ease;
+      will-change: transform;
+    }
+
+    .service-icon .icon {
+      width: 54px;
+      height: 54px;
+      transform: scale(1);
+      transition: transform .24s cubic-bezier(.2, .8, .2, 1.28);
+    }
+
+    .service-card:hover .service-icon,
+    .service-card:focus-within .service-icon {
+      transform: translateY(-12px) scale(1.14);
+      box-shadow: 0 26px 48px rgba(32, 26, 20, .2);
+    }
+
+    .service-card:hover .service-icon .icon,
+    .service-card:focus-within .service-icon .icon {
+      transform: scale(1.08);
+    }
+
+    .service-card h3 {
+      margin-bottom: 12px;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .service-card:nth-child(1) {
+      --icon-bg: #d88b28;
+      --card-glow: rgba(216, 139, 40, .2);
+      --card-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'%3E%3Cg fill='none' stroke='%23d88b28' stroke-opacity='.18' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M54 208h400'/%3E%3Cpath d='M92 208V118l72-52 72 52 72-52 72 52v90'/%3E%3Cpath d='M138 150h52v58M238 150h52M338 150h52'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .service-card:nth-child(2) {
+      --icon-bg: #1f8a84;
+      --card-glow: rgba(31, 138, 132, .18);
+      --card-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'%3E%3Cg fill='none' stroke='%231f8a84' stroke-opacity='.16' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M260 42l142 62v58c0 72-58 120-142 140-84-20-142-68-142-140v-58z'/%3E%3Cpath d='M214 165l34 34 72-86'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .service-card:nth-child(3) {
+      --icon-bg: #c8894c;
+      --card-glow: rgba(200, 137, 76, .18);
+      --card-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'%3E%3Cg fill='none' stroke='%23c8894c' stroke-opacity='.18' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M86 208h340'/%3E%3Cpath d='M126 172l74-62 62 44 102-104'/%3E%3Cpath d='M112 74h92M112 108h52M332 168h84'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .service-card:nth-child(4) {
+      --icon-bg: #1f8a84;
+      --card-glow: rgba(31, 138, 132, .18);
+      --card-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'%3E%3Cg fill='none' stroke='%231f8a84' stroke-opacity='.16' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M132 94h256v140H132z'/%3E%3Cpath d='M132 94l128 76 128-76'/%3E%3Cpath d='M188 70h144M210 48h100'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .service-card:nth-child(5) {
+      --icon-bg: #d88b28;
+      --card-glow: rgba(216, 139, 40, .2);
+      --card-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'%3E%3Cg fill='none' stroke='%23d88b28' stroke-opacity='.18' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M82 188h356'/%3E%3Cpath d='M132 150h86v38h-86zM248 122h86v66h-86zM364 92h54v96h-54z'/%3E%3Cpath d='M112 92h76M112 118h42'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .service-card:nth-child(6) {
+      --icon-bg: #1f8a84;
+      --card-glow: rgba(31, 138, 132, .18);
+      --card-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='520' height='260' viewBox='0 0 520 260'%3E%3Cg fill='none' stroke='%231f8a84' stroke-opacity='.16' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M94 166h230V82H94zM324 116h70l44 50v54H324z'/%3E%3Ccircle cx='166' cy='220' r='22'/%3E%3Ccircle cx='378' cy='220' r='22'/%3E%3Cpath d='M128 116h140M128 146h86'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .split {
+      background: #fff;
+    }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .photo-panel {
+      min-height: 430px;
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(26, 22, 20, .12), rgba(26, 22, 20, .5)),
+        url("assets/process-port-bg.png") center / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-panel::after {
+      content: "Factory Search";
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      color: #fff;
+      font-size: 30px;
+      font-weight: 900;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, .5);
+    }
+
+    .split-copy p {
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .proof-list {
+      margin: 28px 0 0;
+      padding: 0;
+      display: grid;
+      gap: 14px;
+      list-style: none;
+    }
+
+    .proof-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: #38322e;
+      font-weight: 800;
+    }
+
+    .check {
+      width: 23px;
+      height: 23px;
+      display: grid;
+      place-items: center;
+      margin-top: 1px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--amber);
+      flex: 0 0 auto;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .process {
+      color: #fff;
+      background:
+        linear-gradient(rgba(28, 23, 20, .86), rgba(28, 23, 20, .9)),
+        url("assets/process-port-bg.png") center / cover fixed no-repeat;
+    }
+
+    .process .section-title p {
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .process-step {
+      min-height: 246px;
+      padding: 28px 24px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(6px);
+    }
+
+    .process-step span {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--amber-light);
+      font-size: 34px;
+      font-weight: 900;
+    }
+
+    .process-step h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .process-step p {
+      color: rgba(255, 255, 255, .74);
+      font-size: 14px;
+    }
+
+    .categories {
+      background: var(--mist);
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .category-pill {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      border: 1px solid #d8e8e6;
+      border-radius: var(--radius);
+      background: #fff;
+      color: #263734;
+      text-align: center;
+      font-weight: 900;
+      box-shadow: 0 8px 18px rgba(28, 73, 68, .06);
+    }
+
+    .contact {
+      background: var(--soft);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .contact-copy p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .contact-box {
+      margin-top: 30px;
+      padding: 24px;
+      border-left: 5px solid var(--amber);
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(36, 28, 20, .08);
+      color: #3a342f;
+      font-weight: 800;
+    }
+
+    .contact-methods {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+      color: #4a443f;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 34px 0;
+      color: rgba(255, 255, 255, .68);
+      background: #1e1a18;
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 44px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    form {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      color: #3b342f;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 49px;
+      border: 1px solid #ddd2c5;
+      border-radius: var(--radius);
+      padding: 12px 13px;
+      color: var(--ink);
+      background: #fffdf9;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--amber);
+      box-shadow: 0 0 0 4px rgba(216, 139, 40, .16);
+    }
+
+    .span-2 {
+      grid-column: span 2;
+    }
+
+    .form-actions {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .form-actions .btn-primary {
+      border: 0;
+    }
+
+    .status {
+      color: #91580f;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    @media (max-width: 980px) {
+      .service-grid,
+      .split-layout,
+      .process-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .photo-panel {
+        min-height: 340px;
+      }
+    }
+
+    @media (max-width: 660px) {
+      .nav,
+      .section-inner,
+      .hero-content,
+      .footer-inner {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .nav {
+        min-height: 78px;
+        align-items: flex-start;
+        padding-top: 22px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .brand {
+        width: 168px;
+      }
+
+      .brand img {
+        width: 168px;
+      }
+
+      .hero-content {
+        min-height: calc(100vh - 78px);
+        padding: 52px 0 88px;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 1.08;
+      }
+
+      .hero-copy p {
+        font-size: 16px;
+      }
+
+      .hero-actions,
+      .form-actions {
+        display: grid;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .form-grid,
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .span-2 {
+        grid-column: auto;
+      }
+
+      form,
+      .service-card,
+      .process-step {
+        padding: 24px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .hero-copy p {
+        font-size: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-video {
+        display: none;
+      }
+
+      .service-card,
+      .service-icon,
+      .service-icon .icon {
+        transition: none;
+      }
+
+      .service-card:hover,
+      .service-card:focus-within,
+      .service-card:hover .service-icon,
+      .service-card:focus-within .service-icon,
+      .service-card:hover .service-icon .icon,
+      .service-card:focus-within .service-icon .icon {
+        transform: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="hero" id="home">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-port-uploaded-poster.png" aria-hidden="true">
+      <source src="assets/source-port.mp4" type="video/mp4" />
+    </video>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Joint Group home">
+        <img src="assets/joint-trader-logo.svg" alt="Joint Group" />
+      </a>
+      <div class="nav-links">
+        <a class="active" href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="#contact">Get Started</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-copy">
+        <h1>Minimize Risks,<br />Maximize Opportunities</h1>
+        <p>Your trusted partner for China sourcing. We connect global buyers with reliable suppliers through transparent processes and expert guidance.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">
+            Explore Services
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+          <a class="btn btn-ghost" href="#contact">Start Your Project</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="services" class="services">
+      <div class="section-inner">
+        <div class="section-title">
+          <p class="kicker">Our Services</p>
+          <h2>China factory access without guessing who to trust.</h2>
+          <p>Tell us what you need to buy. We handle the local search, supplier communication, quotation checks, and follow-up work that foreign buyers often cannot see from overseas.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M7 7v13h10V7M9 4h6v3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Factory Sourcing</h3>
+            <p>Shortlist manufacturers by product type, MOQ, price target, production capacity, certificates, and export experience.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.4 8-8 9-4.6-1-8-4-8-9V7l8-4zM9 12l2 2 4-5" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Supplier Verification</h3>
+            <p>Check business background, factory fit, communication quality, documents, trade terms, and potential project risks.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M5 17l4-4 3 3 7-8M5 20h14" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Quote Comparison</h3>
+            <p>Compare tooling, unit price, lead time, payment terms, packaging, Incoterms, and hidden cost points before you commit.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6 19V5h12v14M9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Sample Management</h3>
+            <p>Coordinate sample requests, revisions, consolidation, courier handoff, and approval details before production starts.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M7 5h10l3 5v9H4V5h3zM7 5v14M17 5v14M4 12h16" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Production Follow-up</h3>
+            <p>Track key milestones, confirm specifications, prepare inspection points, and keep supplier updates clear and organized.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 17h11V6H4v11zM15 10h3l2 3v4h-5M7 20a2 2 0 100-4 2 2 0 000 4zM17 20a2 2 0 100-4 2 2 0 000 4z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Export Coordination</h3>
+            <p>Support packing, labels, documents, consolidation, forwarder communication, and shipment handoff from China.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="split">
+      <div class="section-inner split-layout">
+        <div class="photo-panel" aria-label="Port and factory sourcing background"></div>
+        <div class="split-copy">
+          <p class="kicker">Why Buyers Choose Us</p>
+          <h2>A local partner between your team and Chinese factories.</h2>
+          <p>Joint Group supports importers, wholesalers, private-label brands, and ecommerce sellers who need factory access but want clearer communication, better comparison, and practical control over each step.</p>
+          <ul class="proof-list">
+            <li><span class="check">✓</span><span>Product requirements are translated into supplier questions that factories can quote accurately.</span></li>
+            <li><span class="check">✓</span><span>Factory options are compared by capability, not only the lowest quoted price.</span></li>
+            <li><span class="check">✓</span><span>Samples, production details, and export work are followed up locally in China.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process">
+      <div class="section-inner">
+        <div class="section-title">
+          <p class="kicker">How It Works</p>
+          <h2>From product brief to factory shortlist.</h2>
+          <p>Every project moves through clear checkpoints so you know what has been searched, what has been verified, and what decision comes next.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step">
+            <span>01</span>
+            <h3>Send Brief</h3>
+            <p>Share photos, specs, materials, target quantity, destination, certifications, and target price.</p>
+          </article>
+          <article class="process-step">
+            <span>02</span>
+            <h3>Search Factories</h3>
+            <p>We identify suitable supplier regions and prepare a focused shortlist for your product.</p>
+          </article>
+          <article class="process-step">
+            <span>03</span>
+            <h3>Verify & Compare</h3>
+            <p>Review supplier fit, quote details, samples, lead time, payment terms, and risk points.</p>
+          </article>
+          <article class="process-step">
+            <span>04</span>
+            <h3>Follow Through</h3>
+            <p>Coordinate sample approval, production follow-up, quality checks, documents, and shipping handoff.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="section-inner">
+        <div class="section-title">
+          <p class="kicker">Product Categories</p>
+          <h2>Suitable for many factory-made products.</h2>
+          <p>We can start with a new product idea, a current supplier issue, or an existing item you want to source from a better factory.</p>
+        </div>
+        <div class="category-grid">
+          <div class="category-pill">Consumer Goods</div>
+          <div class="category-pill">Packaging</div>
+          <div class="category-pill">Home & Kitchen</div>
+          <div class="category-pill">Electronics</div>
+          <div class="category-pill">Apparel & Textiles</div>
+          <div class="category-pill">Promotional Gifts</div>
+          <div class="category-pill">Industrial Parts</div>
+          <div class="category-pill">Custom Products</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="section-inner contact-layout">
+        <div class="contact-copy">
+          <p class="kicker">Contact Us</p>
+          <h2>Start with your product brief.</h2>
+          <p>Tell us what you want to source from China. We will help define the search direction, supplier questions, and next steps toward samples or production.</p>
+          <div class="contact-box">
+            Best briefs include product images, material, size, target quantity, destination country, required certificates, packaging, target price, and timeline.
+          </div>
+          <div class="contact-methods">
+            <span>Email: sourcing@jointgroup.com</span>
+            <span>Response focus: factory search, supplier verification, samples, QC, and export coordination.</span>
+          </div>
+        </div>
+
+        <form id="briefForm">
+          <div class="form-grid">
+            <label>
+              Name
+              <input name="name" autocomplete="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email
+              <input name="email" type="email" autocomplete="email" placeholder="name@company.com" required />
+            </label>
+            <label>
+              Company
+              <input name="company" autocomplete="organization" placeholder="Company name" />
+            </label>
+            <label>
+              Destination Market
+              <input name="destination" placeholder="Country / market" />
+            </label>
+            <label>
+              Product Category
+              <select name="category" required>
+                <option value="">Select one</option>
+                <option>Consumer goods</option>
+                <option>Electronics</option>
+                <option>Apparel and textiles</option>
+                <option>Industrial parts</option>
+                <option>Packaging</option>
+                <option>Other / custom</option>
+              </select>
+            </label>
+            <label>
+              Estimated Quantity
+              <input name="quantity" placeholder="e.g. 1,000 pcs" />
+            </label>
+            <label class="span-2">
+              Product Brief
+              <textarea name="message" placeholder="Describe the product, target price, materials, dimensions, certifications, timeline, and current supplier issues." required></textarea>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">
+              Prepare Email
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <span class="status" id="formStatus" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>© 2026 Joint Group. China factory sourcing partner.</span>
+      <span>Supplier sourcing · Verification · Samples · QC · Export coordination</span>
+    </div>
+  </footer>
+
+  <script>
+    const CONTACT_EMAIL = "sourcing@jointgroup.com";
+    const form = document.querySelector("#briefForm");
+    const status = document.querySelector("#formStatus");
+
+    form?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const lines = [
+        "New China factory sourcing brief",
+        "",
+        `Name: ${data.get("name") || ""}`,
+        `Email: ${data.get("email") || ""}`,
+        `Company: ${data.get("company") || ""}`,
+        `Destination market: ${data.get("destination") || ""}`,
+        `Product category: ${data.get("category") || ""}`,
+        `Estimated quantity: ${data.get("quantity") || ""}`,
+        "",
+        "Product brief:",
+        data.get("message") || ""
+      ];
+      const subject = encodeURIComponent("New China Factory Sourcing Brief");
+      const body = encodeURIComponent(lines.join("\n"));
+      status.textContent = "Opening your email draft...";
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      setTimeout(() => {
+        status.textContent = "Email draft prepared.";
+      }, 700);
+    });
+  </script>
+</body>
+</html>
