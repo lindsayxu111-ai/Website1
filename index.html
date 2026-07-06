@@ -449,7 +449,7 @@
     }
 
     .photo-panel::after {
-      content: "Factory Search";
+      content: "Risk-Controlled Sourcing";
       position: absolute;
       left: 28px;
       bottom: 28px;
@@ -457,6 +457,57 @@
       font-size: 30px;
       font-weight: 900;
       text-shadow: 0 2px 14px rgba(0, 0, 0, .5);
+    }
+
+    .insight-panel {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      width: min(260px, calc(100% - 52px));
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: var(--radius);
+      background: rgba(18, 16, 14, .68);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .insight-panel strong {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--amber-light);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .insight-row {
+      display: grid;
+      gap: 7px;
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .insight-row span {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(255, 255, 255, .82);
+    }
+
+    .insight-bar {
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .16);
+      overflow: hidden;
+    }
+
+    .insight-bar i {
+      display: block;
+      height: 100%;
+      width: var(--value);
+      border-radius: inherit;
+      background: var(--amber-light);
     }
 
     .split-copy p {
@@ -478,6 +529,45 @@
       align-items: flex-start;
       color: #38322e;
       font-weight: 800;
+    }
+
+    .decision-grid {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .decision-card {
+      min-height: 138px;
+      padding: 20px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(36, 28, 20, .06);
+    }
+
+    .decision-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 900;
+    }
+
+    .decision-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .risk-note {
+      margin-top: 22px;
+      padding: 20px 22px;
+      border-left: 5px solid var(--amber);
+      background: var(--soft);
+      color: #3a342f;
+      font-weight: 900;
     }
 
     .check {
@@ -562,6 +652,86 @@
       text-align: center;
       font-weight: 900;
       box-shadow: 0 8px 18px rgba(28, 73, 68, .06);
+    }
+
+    .case-grid {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .case-card {
+      min-height: 242px;
+      padding: 26px 24px;
+      border: 1px solid #d8e8e6;
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(28, 73, 68, .08);
+    }
+
+    .case-card .tag {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--teal);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .case-card:nth-child(2n) .tag {
+      background: var(--amber);
+    }
+
+    .case-card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+      line-height: 1.18;
+      font-weight: 900;
+    }
+
+    .case-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .case-meta {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid #edf1ef;
+      display: grid;
+      gap: 6px;
+      color: #31423f;
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .partner-strip {
+      margin-top: 26px;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: #263734;
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 20px;
+    }
+
+    .partner-strip strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--amber-light);
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .partner-strip span {
+      color: rgba(255, 255, 255, .76);
+      font-size: 14px;
+      font-weight: 800;
     }
 
     .contact {
@@ -692,12 +862,29 @@
         grid-template-columns: 1fr;
       }
 
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+
       .category-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
+      .case-grid,
+      .partner-strip {
+        grid-template-columns: 1fr;
+      }
+
       .photo-panel {
         min-height: 340px;
+      }
+
+      .insight-panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        margin: 22px;
       }
     }
 
@@ -755,7 +942,9 @@
       }
 
       .form-grid,
-      .category-grid {
+      .category-grid,
+      .case-grid,
+      .partner-strip {
         grid-template-columns: 1fr;
       }
 
@@ -901,16 +1090,47 @@
 
     <section id="about" class="split">
       <div class="section-inner split-layout">
-        <div class="photo-panel" aria-label="Port and factory sourcing background"></div>
+        <div class="photo-panel" aria-label="Port and factory sourcing background">
+          <div class="insight-panel" aria-hidden="true">
+            <strong>Buyer Risk Radar</strong>
+            <div class="insight-row">
+              <span><b>Supplier fit</b><b>92%</b></span>
+              <div class="insight-bar"><i style="--value: 92%"></i></div>
+            </div>
+            <div class="insight-row">
+              <span><b>Quote clarity</b><b>88%</b></span>
+              <div class="insight-bar"><i style="--value: 88%"></i></div>
+            </div>
+            <div class="insight-row">
+              <span><b>Production control</b><b>85%</b></span>
+              <div class="insight-bar"><i style="--value: 85%"></i></div>
+            </div>
+          </div>
+        </div>
         <div class="split-copy">
-          <p class="kicker">Why Buyers Choose Us</p>
-          <h2>A local partner between your team and Chinese factories.</h2>
-          <p>Joint Group supports importers, wholesalers, private-label brands, and ecommerce sellers who need factory access but want clearer communication, better comparison, and practical control over each step.</p>
+          <p class="kicker">Why Joint Group</p>
+          <h2>Do not gamble your order on an unknown factory.</h2>
+          <p>Most sourcing mistakes are expensive because they stay hidden until samples fail, production slips, or shipment documents are wrong. Joint Group gives overseas buyers local eyes, structured comparison, and disciplined follow-up before money and time are at risk.</p>
           <ul class="proof-list">
-            <li><span class="check">✓</span><span>Product requirements are translated into supplier questions that factories can quote accurately.</span></li>
-            <li><span class="check">✓</span><span>Factory options are compared by capability, not only the lowest quoted price.</span></li>
-            <li><span class="check">✓</span><span>Samples, production details, and export work are followed up locally in China.</span></li>
+            <li><span class="check">✓</span><span>We filter suppliers by real capability, not polished listings or the cheapest first quote.</span></li>
+            <li><span class="check">✓</span><span>We translate product requirements into factory-ready questions, drawings, samples, and checkpoints.</span></li>
+            <li><span class="check">✓</span><span>We keep pressure on timelines, quality details, documents, and export handoff inside China.</span></li>
           </ul>
+          <div class="decision-grid">
+            <div class="decision-card">
+              <strong>Fewer blind spots</strong>
+              <p>Supplier claims, hidden fees, vague specs, and unclear trade terms are checked before you commit.</p>
+            </div>
+            <div class="decision-card">
+              <strong>Better decisions</strong>
+              <p>You compare factories by capability, communication, sample quality, lead time, and total cost.</p>
+            </div>
+            <div class="decision-card">
+              <strong>Local execution</strong>
+              <p>Follow-up happens in China, in the same language and time zone as your suppliers.</p>
+            </div>
+          </div>
+          <div class="risk-note">Choosing the wrong factory can cost more than the product itself. Choosing the right sourcing partner protects the whole order.</div>
         </div>
       </div>
     </section>
@@ -951,8 +1171,8 @@
       <div class="section-inner">
         <div class="section-title">
           <p class="kicker">Product Categories</p>
-          <h2>Suitable for many factory-made products.</h2>
-          <p>We can start with a new product idea, a current supplier issue, or an existing item you want to source from a better factory.</p>
+          <h2>Proven sourcing experience across repeat-order categories.</h2>
+          <p>We support practical factory-made products where supplier fit, packaging, quality details, and stable follow-up matter. Many projects begin with one trial order and continue into repeat purchasing cycles.</p>
         </div>
         <div class="category-grid">
           <div class="category-pill">Consumer Goods</div>
@@ -963,6 +1183,81 @@
           <div class="category-pill">Promotional Gifts</div>
           <div class="category-pill">Industrial Parts</div>
           <div class="category-pill">Custom Products</div>
+        </div>
+        <div class="case-grid">
+          <article class="case-card">
+            <span class="tag">Packaging</span>
+            <h3>Retail packaging supplier replacement</h3>
+            <p>Helped a buyer compare paper box, insert, and label factories after inconsistent print quality from a previous supplier.</p>
+            <div class="case-meta">
+              <span>Result: clearer sample approvals</span>
+              <span>Follow-up: repeat seasonal orders</span>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <span class="tag">Home Goods</span>
+            <h3>Kitchen and household product sourcing</h3>
+            <p>Shortlisted factories by material, finish, MOQ, packaging, and export documentation for multi-SKU household programs.</p>
+            <div class="case-meta">
+              <span>Result: consolidated supplier options</span>
+              <span>Follow-up: stable reorder planning</span>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <span class="tag">Electronics</span>
+            <h3>Accessory project quote comparison</h3>
+            <p>Compared quotes beyond unit price, including tooling, testing, packaging, lead time, and warranty communication.</p>
+            <div class="case-meta">
+              <span>Result: fewer hidden cost points</span>
+              <span>Follow-up: sample-to-production tracking</span>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <span class="tag">Textiles</span>
+            <h3>Apparel and textile sampling control</h3>
+            <p>Coordinated fabric, color, sizing, labeling, and packing requirements so factories could quote and sample consistently.</p>
+            <div class="case-meta">
+              <span>Result: faster sample revisions</span>
+              <span>Follow-up: long-term vendor shortlist</span>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <span class="tag">Industrial</span>
+            <h3>Custom parts supplier screening</h3>
+            <p>Reviewed capability, tolerance communication, drawings, inspection points, and export readiness before supplier selection.</p>
+            <div class="case-meta">
+              <span>Result: better technical alignment</span>
+              <span>Follow-up: production milestone checks</span>
+            </div>
+          </article>
+
+          <article class="case-card">
+            <span class="tag">Promotional</span>
+            <h3>Promotional goods production follow-up</h3>
+            <p>Managed logo placement, packaging, deadline pressure, and shipment handoff for campaign-driven purchasing schedules.</p>
+            <div class="case-meta">
+              <span>Result: cleaner pre-shipment checks</span>
+              <span>Follow-up: repeat campaign sourcing</span>
+            </div>
+          </article>
+        </div>
+        <div class="partner-strip">
+          <div>
+            <strong>Repeat buyers</strong>
+            <span>Built for clients who need ongoing sourcing, not one-time supplier lists.</span>
+          </div>
+          <div>
+            <strong>Stable factory pools</strong>
+            <span>We keep qualified supplier options by category, region, capability, and export fit.</span>
+          </div>
+          <div>
+            <strong>Long-term follow-up</strong>
+            <span>From sample approval to repeat orders, we keep details organized across purchasing cycles.</span>
+          </div>
         </div>
       </div>
     </section>
